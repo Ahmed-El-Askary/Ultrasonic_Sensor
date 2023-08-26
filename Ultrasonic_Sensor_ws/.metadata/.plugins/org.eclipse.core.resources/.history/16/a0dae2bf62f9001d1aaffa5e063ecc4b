@@ -1,0 +1,69 @@
+/******************************************************************************
+ *
+ * Module: ULTRASONIC
+ *
+ * File Name: ultrasonic.c
+ *
+ * Description: Header file for the AVR ULTRASONIC driver
+ *
+ * Author: Ahmed El-Askary
+ *
+ *******************************************************************************/
+
+#include "common_macros.h"
+#include <util/delay.h>
+#include "icu.h"
+#include "gpio.h"
+#include "ultrasonic.h"
+#include "std_types.h"
+static uint16 g_distance;
+
+/*******************************************************************************
+ *                      Functions Definitions                                  *
+ *******************************************************************************/
+/*
+ * Description :
+ * Initialize the ICU driver as required.
+ * 1. Setup the ICU call back function.
+ * 2. Setup the direction for the trigger pin as output pin through the
+      GPIO driver.
+ */
+void Ultrasonic_init(void)
+{
+	ICU_ConfigType ICU_EdgeType={F_CPU_8,RAISING};
+	Icu_init(&ICU_EdgeType);
+
+	ICU_setCallBack(Ultrasonic_edgeProcessing);
+	GPIO_setupPinDirection(TRIGGER_PORT_ID,TRIGGER_PINI_ID,PIN_OUTPUT);
+}
+
+
+/*
+ * Description :
+ * Send the Trigger pulse to the ultrasonic..
+ */
+void Ultrasonic_Trigger(void)
+{
+	GPIO_writePin(TRIGGER_PORT_ID,TRIGGER_PINI_ID,LOGIC_HIGH);
+	_delay_ms(10);
+	GPIO_writePin(TRIGGER_PORT_ID,TRIGGER_PINI_ID,LOGIC_LOW);
+}
+
+
+
+/*
+ * Description :
+ * Send the trigger pulse by using Ultrasonic_Trigger function.
+ * Start the measurements by the ICU from this moment
+ */
+static uint16 g_distance;
+
+uint16 Ultrasonic_readDistance(void)
+{
+
+
+
+
+
+
+}

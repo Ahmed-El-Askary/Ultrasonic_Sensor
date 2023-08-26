@@ -1,0 +1,26 @@
+ /******************************************************************************
+ *
+ * Module: ULTRASONIC
+ *
+ * File Name: ultrasonic.h
+ *
+ * Description: Header file for the AVR ULTRASONIC driver
+ *
+ * Author: Ahmed El-Askary
+ *
+ *******************************************************************************/
+
+#ifndef ULTRASONIC_H_
+#define ULTRASONIC_H_
+
+
+
+
+
+
+
+
+
+
+
+#endif /* ULTRASONIC_H_ */

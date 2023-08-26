@@ -1,0 +1,34 @@
+ /******************************************************************************
+ *
+ * Module: ULTRASONIC
+ *
+ * File Name: ultrasonic.c
+ *
+ * Description: Header file for the AVR ULTRASONIC driver
+ *
+ * Author: Ahmed El-Askary
+ *
+ *******************************************************************************/
+
+#include "common_macros.h"
+#include <util/delay.h>
+#include "icu.h"
+#include "gpio.h"
+#include "ultrasonic.h"
+
+/*******************************************************************************
+ *                      Functions Definitions                                  *
+ *******************************************************************************/
+/*
+ * Description :
+ * Initialize the ICU driver as required.
+ * 1. Setup the ICU call back function.
+ * 2. Setup the direction for the trigger pin as output pin through the
+      GPIO driver.
+ */
+void Ultrasonic_init(void)
+{
+
+
+
+}
